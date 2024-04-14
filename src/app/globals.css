@@ -4,7 +4,7 @@
 
 :root {
   --foreground: #000000;
-  --background: #9999FF;
+  --background: #9999ff;
 }
 
 body {
@@ -13,7 +13,16 @@ body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .rotate-y-0-pers-800 {
+    transform: perspective(800px) rotateY(0deg);
+  }
+  .rotate-y-90-pers-800 {
+    transform: perspective(800px) rotateY(90deg);
+  }
+  .rotate-y-270-pers-800 {
+    transform: perspective(800px) rotateY(270deg);
+  }
+  .rotate-y-360-pers-800 {
+    transform: perspective(800px) rotateY(360deg);
   }
 }

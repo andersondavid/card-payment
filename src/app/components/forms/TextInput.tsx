@@ -5,10 +5,12 @@ type PropsType = {
   id: string;
   placeholder: string;
   mask?: string;
+  ref?: React.RefObject<HTMLInputElement>;
+  onFocusBlur?: (arg0: boolean) => void
 };
 
 function TextInput(props: PropsType) {
-  const { label, id, placeholder, mask } = props;
+  const { label, id, placeholder, mask, ref, onFocusBlur = () => {}} = props;
 
   return (
     <div className="w-full">
@@ -20,6 +22,8 @@ function TextInput(props: PropsType) {
       <div className="bg-white relative rounded-xl h-14 w-full">
         <input
           type="text"
+          onFocus={() => onFocusBlur(true)}
+          onBlur={() => onFocusBlur(false)}
           id={id}
           placeholder={placeholder}
           className="bg-transparent h-full outline-0 w-full text-2xl px-4"
