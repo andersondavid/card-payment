@@ -3,6 +3,7 @@
 import { useState } from "react";
 import TextInput from "./components/forms/TextInput";
 import Card from "./components/Card";
+import SubmitButton from "./components/forms/SubmitButton";
 
 export default function Home() {
   const [cvvFocus, setCvvFocus] = useState<boolean>();
@@ -12,8 +13,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex justify-center items-center bg-orange-200">
-      <div className="bg-slate-400 rounded-2xl p-8 flex">
+    <main className="min-h-screen flex justify-center items-center">
+      <div className="bg-nb-clear rounded-2xl p-8 flex border-4 relative before:border-4 before:absolute before:-z-10 before:top-2 before:left-0 before:bg-nb-dark-blue before:w-full before:h-full before:rounded-2xl">
         <div>
           <div className="w-80">
             <TextInput
@@ -57,8 +58,11 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="ml-8">
+        <div className="ml-8 flex flex-col justify-between pt-10">
           <Card cardNumber="" name="" validate="" cvv="" cvvFocus={cvvFocus} />
+          <div className="w-80">
+            <SubmitButton text="Confirmar" />
+          </div>
         </div>
       </div>
     </main>

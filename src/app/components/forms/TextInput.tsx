@@ -19,7 +19,7 @@ function TextInput(props: PropsType) {
           {label}
         </label>
       )}
-      <div className="bg-white relative rounded-xl h-14 w-full">
+      <div className="bg-white relative rounded-xl h-14 w-full border-[3px]">
         <input
           type="text"
           onFocus={() => onFocusBlur(true)}

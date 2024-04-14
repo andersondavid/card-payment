@@ -14,7 +14,7 @@ export default function Card(props: PropsType) {
   return (
     <div className="relative w-80 h-48">
       <div
-        className={`absolute w-80 h-48 bg-purple-700 rounded-xl flex items-end p-4 transition ease-linear duration-300 ${cvvFocus ? "rotate-y-90-pers-800" : "rotate-y-0-pers-800 delay-300"}`}
+        className={`absolute border-[3px] w-80 h-48 bg-nb-blue rounded-xl flex items-end p-4 transition ease-linear duration-300 ${cvvFocus ? "rotate-y-90-pers-800" : "rotate-y-0-pers-800 delay-300"}`}
       >
         <div>
           <h1 className="text-xl">{cardNumber || '1234 1234 1234 1234'}</h1>
@@ -25,10 +25,10 @@ export default function Card(props: PropsType) {
         </div>
       </div>
       <div
-        className={`absolute w-80 h-48 bg-blue-700 rounded-xl flex items-end p-8 transition ease-linear duration-300 ${cvvFocus ? "rotate-y-360-pers-800 delay-300" : "rotate-y-270-pers-800"}`}
+        className={`absolute border-[3px] w-80 h-48 bg-nb-dark-blue rounded-xl flex items-end p-4 transition ease-linear duration-300 ${cvvFocus ? "rotate-y-360-pers-800 delay-300" : "rotate-y-270-pers-800"}`}
       >
         <div>
-          <span className="font-bold">CVV</span>
+          <span className="">CVV:</span>
           <span className="pl-2 text-xl font-bold">{cvv || '123'}</span>
         </div>
       </div>

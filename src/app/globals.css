@@ -4,12 +4,12 @@
 
 :root {
   --foreground: #000000;
-  --background: #9999ff;
+  --background: #E91E63;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background-end);
+  background: var(--background);
 }
 
 @layer utilities {
