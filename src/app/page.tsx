@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import TextInput from "./components/forms/TextInput";
+import Card from "./components/Card";
 
 export default function Home() {
   const [cvvFocus, setCvvFocus] = useState<boolean>();
@@ -56,28 +57,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="">
-          <div className="relative w-80 h-48">
-            <div
-              className={`absolute w-80 h-48 bg-purple-700 rounded-xl flex items-end p-4 transition ease-linear duration-500 ${cvvFocus ? "rotate-y-90-pers-800" : "rotate-y-0-pers-800 delay-500"}`}
-            >
-              <div>
-                <h1 className="text-xl">1234 1234 1234 1234</h1>
-                <div>
-                  <span className="font-bold">Anderson S Freitas</span>
-                  <span className="pl-4 font-bold">12/34</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`absolute w-80 h-48 bg-blue-700 rounded-xl flex items-end p-8 transition ease-linear duration-500 ${cvvFocus ? "rotate-y-360-pers-800 delay-500" : "rotate-y-270-pers-800"}`}
-            >
-              <div>
-                <span className="font-bold">CVV</span>
-                <span className="pl-2 text-xl font-bold">123</span>
-              </div>
-            </div>
-          </div>
+        <div className="ml-8">
+          <Card cardNumber="" name="" validate="" cvv="" cvvFocus={cvvFocus} />
         </div>
       </div>
     </main>

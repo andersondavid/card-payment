@@ -6,11 +6,11 @@ type PropsType = {
   placeholder: string;
   mask?: string;
   ref?: React.RefObject<HTMLInputElement>;
-  onFocusBlur?: (arg0: boolean) => void
+  onFocusBlur?: (arg0: boolean) => void;
 };
 
 function TextInput(props: PropsType) {
-  const { label, id, placeholder, mask, ref, onFocusBlur = () => {}} = props;
+  const { label, id, placeholder, mask, ref, onFocusBlur = () => {} } = props;
 
   return (
     <div className="w-full">
