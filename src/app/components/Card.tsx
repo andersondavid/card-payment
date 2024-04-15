@@ -21,7 +21,7 @@ export default function Card(props: PropsType) {
             {cardNumber || "1234 1234 1234 1234"}
           </h1>
           <div>
-            <span className="font-bold font-public-sans">
+            <span className="font-semibold font-public-sans">
               {name || "CLIENT NAME"}
             </span>
             <span className="pl-4 font-bold">{validate || "12/34"}</span>

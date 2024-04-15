@@ -22,7 +22,7 @@ export default function SubmitButton(props: PropTypes) {
         className={`bg-nb-green border-[3px] relative rounded-xl h-14 w-full ${pressEffect ? "translate-y-[2px]" : "translate-y-0"}`}
       >
         <button
-          className="bg-transparent h-full outline-0 w-full text-2xl px-4 font-lexend-mega"
+          className="bg-transparent h-full outline-0 w-full text-2xl px-4 font-lexend-mega font-normal"
           onClick={handlePress}
         >
           {text}

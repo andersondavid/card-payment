@@ -1,30 +1,22 @@
 import type { Metadata } from "next";
 
-import { Archivo_Black, Public_Sans, Lexend_Mega } from "next/font/google";
+import { Public_Sans, Lexend_Mega } from "next/font/google";
 import "./globals.css";
-
-export const archivo_black_init = Archivo_Black({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-archivo-black",
-  weight: "400",
-});
 
 export const public_sans_init = Public_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-public-sans",
-  weight: "300",
+  weight: ["400", "600"],
 });
 
 export const lexend_mega_init = Lexend_Mega({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-lexenga-mega",
-  weight: "300",
+  weight: ["400", "700"],
 });
 
-export const archivo_black = archivo_black_init.variable;
 export const public_sans = public_sans_init.variable;
 export const lexend_mega = lexend_mega_init.variable;
 
@@ -40,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${archivo_black} ${public_sans} ${lexend_mega}`}>{children}</body>
+      <body className={`${public_sans} ${lexend_mega}`}>{children}</body>
     </html>
   );
 }

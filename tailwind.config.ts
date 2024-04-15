@@ -8,7 +8,6 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      "archivo-black": ["var(--font-archivo-black)"],
       "public-sans": ["var(--font-public-sans)"],
       "lexend-mega": ["var(--font-lexenga-mega)"],
     },
