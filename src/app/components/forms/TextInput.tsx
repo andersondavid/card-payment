@@ -1,21 +1,35 @@
-import React from "react";
+import React, { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 type PropsType = {
   label: string;
   id: string;
   placeholder: string;
   mask?: string;
-  ref?: React.RefObject<HTMLInputElement>;
   onFocusBlur?: (arg0: boolean) => void;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
+const fnVoid = () => {};
+
 function TextInput(props: PropsType) {
-  const { label, id, placeholder, mask, ref, onFocusBlur = () => {} } = props;
+  const {
+    label,
+    id,
+    placeholder,
+    mask,
+    onFocusBlur = fnVoid,
+    value,
+    onChange,
+  } = props;
 
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={id} className="text-base pl-4 my-2 block">
+        <label
+          htmlFor={id}
+          className="text-base pl-4 my-2 block font-public-sans"
+        >
           {label}
         </label>
       )}
@@ -25,8 +39,10 @@ function TextInput(props: PropsType) {
           onFocus={() => onFocusBlur(true)}
           onBlur={() => onFocusBlur(false)}
           id={id}
+          value={value}
+          onChange={onChange}
           placeholder={placeholder}
-          className="bg-transparent h-full outline-0 w-full text-2xl px-4"
+          className="bg-transparent h-full outline-0 w-full text-xl px-4 font-lexend-mega"
         />
       </div>
     </div>

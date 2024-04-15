@@ -7,15 +7,20 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      "archivo-black": "Archivo Black",
+      "public-sans": "Public Sans",
+      "lexend-mega": "Lexend Mega",
+    },
     colors: {
       "nb-pink": "#E91E63",
       "nb-blue": "#5BBCFF",
       "nb-dark-blue": "#3F83B2",
       "nb-green": "#00fd68",
       "nb-clear": "#EEEDEB",
-      "black": "#000000",
-      "white": "#FFFFFF",
-      "transparent": "#00000000",
+      black: "#000000",
+      white: "#FFFFFF",
+      transparent: "#00000000",
     },
   },
   plugins: [],

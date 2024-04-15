@@ -1,15 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import TextInput from "./components/forms/TextInput";
 import Card from "./components/Card";
 import SubmitButton from "./components/forms/SubmitButton";
 
+interface CardData {
+  cardNumber: string;
+  cardValidity: string;
+  cardCvv: string;
+  ownerName: string;
+  ownerCpf: string;
+}
+
+const defaultData: CardData = {
+  cardCvv: "123",
+  cardValidity: "12/34",
+  cardNumber: "1234 1234 1234 1234",
+  ownerCpf: "123.456.789-15",
+  ownerName: "Seu nome...",
+};
+
 export default function Home() {
+  const [cardData, setCardData] = useState<CardData>({} as CardData);
   const [cvvFocus, setCvvFocus] = useState<boolean>();
 
   const cvvOnFocus = (focus: boolean) => {
     setCvvFocus(focus);
+  };
+
+  const handleChange = (key: string, event: ChangeEvent<HTMLInputElement>) => {
+    setCardData((prev) => ({
+      ...prev,
+      [key]: event.target.value,
+    }));
   };
 
   return (
@@ -22,6 +46,8 @@ export default function Home() {
               label="Numero do Cartão"
               mask="XXXX XXXX XXXX XXXX"
               placeholder="0000 0000 0000 0000"
+              value={cardData.cardNumber}
+              onChange={(e) => handleChange("cardNumber", e)}
             />
           </div>
           <div className="w-36 inline-block">
@@ -30,6 +56,8 @@ export default function Home() {
               label="Validade"
               mask="XX/XX"
               placeholder="12/34"
+              value={cardData.cardValidity}
+              onChange={(e) => handleChange("cardValidity", e)}
             />
           </div>
           <div className="w-36 ml-8 inline-block">
@@ -39,6 +67,8 @@ export default function Home() {
               label="CVV"
               mask="XXX"
               placeholder="000"
+              value={cardData.cardCvv}
+              onChange={(e) => handleChange("cardCvv", e)}
             />
           </div>
           <div className="w-80">
@@ -47,14 +77,18 @@ export default function Home() {
               label="Nome no Cartão"
               mask="X"
               placeholder="Seu nome..."
+              value={cardData.ownerName}
+              onChange={(e) => handleChange("ownerName", e)}
             />
           </div>
           <div className="w-80">
             <TextInput
               id="owner-cpf"
-              label="Card number"
+              label="CPF do titular"
               mask="XXX.XXX.XXX-XX"
               placeholder="000.000.000-00"
+              value={cardData.ownerCpf}
+              onChange={(e) => handleChange("ownerCpf", e)}
             />
           </div>
         </div>
