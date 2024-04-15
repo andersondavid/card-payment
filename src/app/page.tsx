@@ -42,7 +42,27 @@ export default function Home() {
             <TextInput
               id="card-number"
               label="Numero do Cartão"
-              mask="XXXX XXXX XXXX XXXX"
+              mask={[
+                /\d/,
+                /\d/,
+                /\d/,
+                /\d/,
+                " ",
+                /\d/,
+                /\d/,
+                /\d/,
+                /\d/,
+                " ",
+                /\d/,
+                /\d/,
+                /\d/,
+                /\d/,
+                " ",
+                /\d/,
+                /\d/,
+                /\d/,
+                /\d/,
+              ]}
               placeholder="0000 0000 0000 0000"
               value={cardData.cardNumber}
               onChange={(e) => handleChange("cardNumber", e)}
@@ -52,7 +72,7 @@ export default function Home() {
             <TextInput
               id="card-validity"
               label="Validade"
-              mask="XX/XX"
+              mask={[/\d/, /\d/, "/", /\d/, /\d/]}
               placeholder="12/34"
               value={cardData.cardValidity}
               onChange={(e) => handleChange("cardValidity", e)}
@@ -63,7 +83,7 @@ export default function Home() {
               id="card-cvv"
               onFocusBlur={cvvOnFocus}
               label="CVV"
-              mask="XXX"
+              mask={[/\d/, /\d/, /\d/]}
               placeholder="000"
               value={cardData.cardCvv}
               onChange={(e) => handleChange("cardCvv", e)}
@@ -73,7 +93,6 @@ export default function Home() {
             <TextInput
               id="owner-name"
               label="Nome no Cartão"
-              mask="X"
               placeholder="Seu nome..."
               value={cardData.ownerName}
               onChange={(e) => handleChange("ownerName", e)}
@@ -83,7 +102,22 @@ export default function Home() {
             <TextInput
               id="owner-cpf"
               label="CPF do titular"
-              mask="XXX.XXX.XXX-XX"
+              mask={[
+                /\d/,
+                /\d/,
+                /\d/,
+                ".",
+                /\d/,
+                /\d/,
+                /\d/,
+                ".",
+                /\d/,
+                /\d/,
+                /\d/,
+                "-",
+                /\d/,
+                /\d/,
+              ]}
               placeholder="000.000.000-00"
               value={cardData.ownerCpf}
               onChange={(e) => handleChange("ownerCpf", e)}
