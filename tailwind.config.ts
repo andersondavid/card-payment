@@ -7,6 +7,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    extend: {
+      backgroundImage: {
+        "card-backside": "url('/images/card-backside.svg')",
+        "card-frontside": "url('/images/card-frontside.svg');",
+      },
+    },
     fontFamily: {
       "public-sans": ["var(--font-public-sans)"],
       "lexend-mega": ["var(--font-lexenga-mega)"],
