@@ -13,16 +13,14 @@ interface CardData {
   ownerCpf: string;
 }
 
-const defaultData: CardData = {
-  cardCvv: "123",
-  cardValidity: "12/34",
-  cardNumber: "1234 1234 1234 1234",
-  ownerCpf: "123.456.789-15",
-  ownerName: "Seu nome...",
-};
-
 export default function Home() {
-  const [cardData, setCardData] = useState<CardData>({} as CardData);
+  const [cardData, setCardData] = useState<CardData>({
+    cardCvv: "",
+    cardNumber: "",
+    cardValidity: "",
+    ownerCpf: "",
+    ownerName: "",
+  });
   const [cvvFocus, setCvvFocus] = useState<boolean>();
 
   const cvvOnFocus = (focus: boolean) => {
@@ -93,7 +91,13 @@ export default function Home() {
           </div>
         </div>
         <div className="ml-8 flex flex-col justify-between pt-10">
-          <Card cardNumber="" name="" validate="" cvv="" cvvFocus={cvvFocus} />
+          <Card
+            cardNumber={cardData.cardNumber}
+            name={cardData.ownerName}
+            validate={cardData.cardValidity}
+            cvv={cardData.cardCvv}
+            cvvFocus={cvvFocus}
+          />
           <div className="w-80">
             <SubmitButton text="Confirmar" />
           </div>
