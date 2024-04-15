@@ -8,9 +8,9 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      "archivo-black": "Archivo Black",
-      "public-sans": "Public Sans",
-      "lexend-mega": "Lexend Mega",
+      "archivo-black": ["var(--font-archivo-black)"],
+      "public-sans": ["var(--font-public-sans)"],
+      "lexend-mega": ["var(--font-lexenga-mega)"],
     },
     colors: {
       "nb-pink": "#E91E63",

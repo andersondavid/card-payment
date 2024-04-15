@@ -1,9 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Archivo_Black, Public_Sans, Lexend_Mega } from "next/font/google";
+import "./globals.css";
+
+export const archivo_black_init = Archivo_Black({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-archivo-black",
+  weight: "400",
+});
+
+export const public_sans_init = Public_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-public-sans",
+  weight: "300",
+});
+
+export const lexend_mega_init = Lexend_Mega({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lexenga-mega",
+  weight: "300",
+});
+
+export const archivo_black = archivo_black_init.variable;
+export const public_sans = public_sans_init.variable;
+export const lexend_mega = lexend_mega_init.variable;
 
 export const metadata: Metadata = {
   title: "Credit Card Payment",
@@ -17,15 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend+Mega:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${archivo_black} ${public_sans} ${lexend_mega}`}>{children}</body>
     </html>
   );
 }
